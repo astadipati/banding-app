@@ -4,14 +4,13 @@
 
 <head>
   <meta charset="utf-8" />
-  <link href="<?php echo base_url().'assets/img/apple-icon.png'?>" rel="apple-touch-icon">
-  <link href="<?php echo base_url().'assets/img/favicon.png'?>" type="image/png" rel="icon">
-  
+  <link rel="icon" href="<?php echo base_url('assets/img/icons/icon_pa.ico');?>" type="image/gif">
+    <!-- <title>Pengadilan Agama Tuban</title> -->
   <!-- <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png"> -->
   <!-- <link rel="icon" type="image/png" href="../assets/img/favicon.png"> -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Pengadilan Tinggi Agama Surabaya by Creative Tim
+    Pengadilan Tinggi Agama Surabaya
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!-- Extra details for Live View on GitHub Pages -->
