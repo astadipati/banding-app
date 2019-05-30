@@ -6,7 +6,7 @@
 
         <!-- menu kontrol 1-->
         <?php if($this->session->userdata('akses')=='1'):?>
-          <li class="nav-item active  ">
+          <li class="nav-item  ">
             <a class="nav-link" href="<?php echo base_url()?>dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
@@ -19,49 +19,49 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/perkara_banding">
               <i class="material-icons">content_paste</i>
               <p>Perkara Banding</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/data_banding">
               <i class="material-icons">content_paste</i>
               <p>Data Banding</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/hakim">
               <i class="material-icons">library_books</i>
               <p>Hakim</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/panitera">
               <i class="material-icons">bubble_chart</i>
               <p>Panitera</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/laporan">
               <i class="material-icons">location_ons</i>
               <p>Laporan</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/data_pa">
               <i class="material-icons">notifications</i>
               <p>Data PA</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/notifikasi">
               <i class="material-icons">notifications</i>
               <p>Notifikasi</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/support">
               <i class="material-icons">language</i>
               <p>Support</p>
             </a>
@@ -83,19 +83,19 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/data_banding">
               <i class="material-icons">content_paste</i>
               <p>Data Banding</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/notifikasi">
               <i class="material-icons">notifications</i>
               <p>Notifikasi</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/support">
               <i class="material-icons">language</i>
               <p>Support</p>
             </a>

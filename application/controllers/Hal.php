@@ -35,7 +35,7 @@ class Hal extends CI_Controller{
       echo "Restricted";
     }
   }
-
+ 
   function hakim(){
     if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
       $this->load->view('template/header');
@@ -88,6 +88,8 @@ class Hal extends CI_Controller{
   }
   function support(){
     if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+      $this->load->view('template/header');
+		  $this->load->view('template/sidebar');
       $this->load->view('kontent/v_support');
       $this->load->view('template/footer');
     }else{
@@ -96,6 +98,8 @@ class Hal extends CI_Controller{
   }
   function data_pa(){
     if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+      $this->load->view('template/header');
+		  $this->load->view('template/sidebar');
       $this->load->view('kontent/v_data_pa');
       $this->load->view('template/footer');
     }else{
@@ -104,6 +108,8 @@ class Hal extends CI_Controller{
   }
   function parapihak(){
     if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+      $this->load->view('template/header');
+		  $this->load->view('template/sidebar');
       $this->load->view('kontent/v_para_pihak');
       $this->load->view('template/footer');
     }else{
@@ -112,7 +118,9 @@ class Hal extends CI_Controller{
   }
   function data_banding(){
     if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
-      $this->load->view('kontent/v_para_pihak');
+      $this->load->view('template/header');
+		  $this->load->view('template/sidebar');
+      $this->load->view('kontent/v_data_banding');
       $this->load->view('template/footer');
     }else{
       echo "Restricted";
