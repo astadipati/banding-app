@@ -49,31 +49,12 @@
   <link href="<?php echo base_url().'assets/demo/demo.css'?>" rel="stylesheet">
   <!-- <link href="../assets/demo/demo.css" rel="stylesheet" /> -->
   <!-- Google Tag Manager -->
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-NKDMSK6');
-  </script>
   <!-- End Google Tag Manager -->
 </head>
 
 <body class="">
   <!-- Extra details for Live View on GitHub Pages -->
   <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
   <!-- End Google Tag Manager (noscript) -->
   <div class="wrapper ">
 
@@ -85,7 +66,7 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-        <?php echo $this->session->userdata('ses_nama');?>
+        <a href="#" class="simple-text logo-normal">
+        <?php echo $this->session->userdata('ses_uname');?>
         </a>
       </div>

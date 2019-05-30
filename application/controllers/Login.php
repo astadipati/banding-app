@@ -20,13 +20,15 @@ class Login extends CI_Controller{
         		$this->session->set_userdata('masuk',TRUE);
 		         if($data['level']=='1'){ //Akses admin
 		            $this->session->set_userdata('akses','1');
-		            $this->session->set_userdata('ses_id',$data['nip']);
+		            $this->session->set_userdata('ses_id',$data['id']);
+		            $this->session->set_userdata('ses_uname',$data['username']);
 		            $this->session->set_userdata('ses_nama',$data['nama']);
 		            redirect('hal');
 
 		         }else{ //akses user
 		            $this->session->set_userdata('akses','2');
-					$this->session->set_userdata('ses_id',$data['nip']);
+					$this->session->set_userdata('ses_id',$data['id']);
+					$this->session->set_userdata('ses_uname',$data['username']);
 		            $this->session->set_userdata('ses_nama',$data['nama']);
 		            redirect('hal');
 		         }
