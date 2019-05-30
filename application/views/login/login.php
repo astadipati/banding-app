@@ -3,6 +3,12 @@
 <head>
 	<title>Login PTA Surabaya</title>
 	<meta charset="UTF-8">
+	<link rel="icon" href="<?php echo base_url('assets/img/icons/icon_pa.ico');?>" type="image/gif">
+    <!-- <title>Pengadilan Agama Tuban</title> -->
+  <!-- <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png"> -->
+  <!-- <link rel="icon" type="image/png" href="../assets/img/favicon.png"> -->
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>

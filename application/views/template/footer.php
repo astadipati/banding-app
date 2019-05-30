@@ -31,7 +31,7 @@
             <script>
               document.write(new Date().getFullYear())
             </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+            <a href="https://pta-surabaya.go.id" target="_blank">Tim IT PTA Surabaya </a>
           </div>
         </div>
       </footer>
@@ -275,7 +275,8 @@
     });
   </script>
   <!-- Sharrre libray -->
-  <script src="../assets/demo/jquery.sharrre.js"></script>
+  <script src="<?php echo base_url().'assets/demo/jquery.sharrre.js'?>"></script>
+  <!-- <script src="../assets/demo/jquery.sharrre.js"></script> -->
   <script>
     $(document).ready(function() {
 

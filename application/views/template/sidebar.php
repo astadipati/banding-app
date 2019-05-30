@@ -3,6 +3,9 @@
 
       <div class="sidebar-wrapper">
         <ul class="nav">
+
+        <!-- menu kontrol 1-->
+        <?php if($this->session->userdata('akses')=='1'):?>
           <li class="nav-item active  ">
             <a class="nav-link" href="<?php echo base_url()?>dashboard">
               <i class="material-icons">dashboard</i>
@@ -10,7 +13,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+            <a class="nav-link" href="<?php echo base_url()?>hal/user_profile">
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>
@@ -19,6 +22,12 @@
             <a class="nav-link" href="./tables.html">
               <i class="material-icons">content_paste</i>
               <p>Perkara Banding</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./tables.html">
+              <i class="material-icons">content_paste</i>
+              <p>Data Banding</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -42,6 +51,12 @@
           <li class="nav-item ">
             <a class="nav-link" href="./notifications.html">
               <i class="material-icons">notifications</i>
+              <p>Data PA</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./notifications.html">
+              <i class="material-icons">notifications</i>
               <p>Notifikasi</p>
             </a>
           </li>
@@ -51,12 +66,49 @@
               <p>Support</p>
             </a>
           </li>
-          <li class="nav-item active-pro ">
-                <a class="nav-link" href="./upgrade.html">
-                    <i class="material-icons">unarchive</i>
-                    <p>Data PA</p>
-                </a>
-            </li>
+          <!-- end menu kontrol 1-->
+
+          <!-- meno kontrol 2 -->
+          <?php elseif($this->session->userdata('akses')=='2'):?>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="<?php echo base_url()?>dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<?php echo base_url()?>hal/user_profile">
+              <i class="material-icons">person</i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./tables.html">
+              <i class="material-icons">content_paste</i>
+              <p>Data Banding</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./notifications.html">
+              <i class="material-icons">notifications</i>
+              <p>Notifikasi</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="./rtl.html">
+              <i class="material-icons">language</i>
+              <p>Support</p>
+            </a>
+          </li>
+          <!-- end menu kontrol 2 -->
+          <?php else:?>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="<?php echo base_url()?>dashboard">
+              <i class="material-icons">dashboard</i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+        <?php endif;?>
         </ul>
       </div>
     </div>
