@@ -10,7 +10,11 @@ class Hal extends CI_Controller{
   }
 
   function index(){
-    $this->load->view('dashboard');
+    // $this->load->view('dashboard');
+    $this->load->view('template/header');
+		$this->load->view('template/sidebar');
+		$this->load->view('kontent/default');
+		$this->load->view('template/footer');
   }
 
   function user_profile(){

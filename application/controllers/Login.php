@@ -45,7 +45,7 @@ class Login extends CI_Controller{
 		// 					echo $this->session->set_flashdata('msg','Username Atau Password Salah');
 		// 					redirect($url);
 		// 			}
-			$url=base_url('');
+			$url=base_url('/login');
 			redirect($url);
 		}
 		
