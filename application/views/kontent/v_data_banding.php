@@ -21,6 +21,14 @@
                       </thead>
                       <tbody>
                         <?php
+                        $this->load->library('encryption');
+    $this->encryption->initialize(
+      array(
+        'cipher' => 'aes-256',
+        'mode' => 'ctr',
+        'key' => $this->config->config['encryption_key']
+      )
+    );
                         $i = $this->uri->segment('3') + 1;
                         foreach ($data->result() as $row) {
                         ?>
@@ -30,11 +38,13 @@
                           <!-- <td><?= $row->putusan_pn?></td> -->
                           <td><?= $row->permohonan_banding?></td>
                           <td class="text-primary"><?= $row->pemohon_banding?></td>
-                          <td><button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit">
-                                <i class="material-icons">edit</i></button></td>
-                          <td><button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Hapus">
+                          <td><a href="<?php echo base_URL()?>hal/dbedit/<?php echo $row->perkara_id?>" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Detil">
+                                <i class="material-icons">edit</i></a></td>
+                          <!-- <td><button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit">
+                                <i class="material-icons">edit</i></button></td> -->
+                          <!-- <td><button type="button" rel="tooltip" title="" class="btn btn-danger btn-link btn-sm" data-original-title="Hapus">
                                 <i class="material-icons">close</i>
-                              </button></td>
+                              </button></td> -->
                         </tr>
                         <?php
                             }

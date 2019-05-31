@@ -3,6 +3,14 @@ class Hal extends CI_Controller{
   function __construct(){
     parent::__construct();
     $this->load->model('M_banding');
+    $this->load->library('encryption');
+    $this->encryption->initialize(
+      array(
+        'cipher' => 'aes-256',
+        'mode' => 'ctr',
+        'key' => $this->config->config['encryption_key']
+      )
+    );
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
 			$url=base_url();
@@ -121,13 +129,14 @@ class Hal extends CI_Controller{
       echo "Restricted";
     }
   }
+  // data banding
   function data_banding(){
     if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
       $this->load->library('pagination');
       $config['base_url'] = base_url().'/hal/data_banding/';
       $config['total_rows'] = $this->M_banding->tampil_banding()->num_rows(); 
       $data['total'] = $this->M_banding->tampil_banding()->num_rows(); 
-      $config['per_page'] = 25;
+      $config['per_page'] = 10;
       $this->pagination->initialize($config);
       $data['paging']     = $this->pagination->create_links();
       $halaman            = $this->uri->segment(3);
@@ -141,5 +150,43 @@ class Hal extends CI_Controller{
       echo "Restricted";
     }
   }
+  
+  function dbedit(){ 
+    if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+      
+          if (isset($_POST['submit'])){
+               $uploadFoto = $this->upload_foto();
+               $this->M_banding->update($uploadFoto);
+               redirect('hal/data_banding');
+          }else{
+
+            $param1 = '123456';
+            
+            // $var_dec = $this->encrypt->decode($var_enc);
+            $var_enc = $this->encryption->encrypt($param1);
+            $var_dec = $this->encryption->decrypt($var_enc);
+
+            // echo "Data enc: ".$var_enc."<br/>";
+            // echo "Data Dec: ".$var_dec;
+            // echo "hasil enc: ".$var_enc."<br/>>";
+            // echo "hasil dec: ".$var_dec."<br/>>";
+
+            $urienc           = $this->uri->segment(3);
+            $uridec  = $this->encryption->decrypt($urienc);
+              //  echo "Decrypt: ".$uridec;
+              //  die();
+
+               $data['data'] = $this->db->get_where('perkara_banding',array ('perkara_id'=>$urienc))->row_array();
+               $this->load->view('template/header');
+               $this->load->view('template/sidebar');
+               $this->load->view('kontent/v_data_banding_edit', $data);
+               $this->load->view('template/footer');
+          }
+      
+    }else{
+      echo "Restricted";
+    }
+  
+}
 
 }
