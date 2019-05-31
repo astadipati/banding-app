@@ -3,14 +3,15 @@ class Hal extends CI_Controller{
   function __construct(){
     parent::__construct();
     $this->load->model('M_banding');
-    $this->load->library('encryption');
-    $this->encryption->initialize(
-      array(
-        'cipher' => 'aes-256',
-        'mode' => 'ctr',
-        'key' => $this->config->config['encryption_key']
-      )
-    );
+    // $this->load->library('encryption');
+    $this->load->library('encrypt');
+    // $this->encryption->initialize(
+    //   array(
+    //     'cipher' => 'aes-256',
+    //     'mode' => 'ctr',
+    //     'key' => $this->config->config['encryption_key']
+    //   )
+    // );
     //validasi jika user belum login
     if($this->session->userdata('masuk') != TRUE){
 			$url=base_url();
@@ -163,20 +164,21 @@ class Hal extends CI_Controller{
             $param1 = '123456';
             
             // $var_dec = $this->encrypt->decode($var_enc);
-            $var_enc = $this->encryption->encrypt($param1);
-            $var_dec = $this->encryption->decrypt($var_enc);
+            $var_enc = $this->encrypt->encode($param1);
+            $var_dec = $this->encrypt->decode($var_enc);
 
             // echo "Data enc: ".$var_enc."<br/>";
             // echo "Data Dec: ".$var_dec;
-            // echo "hasil enc: ".$var_enc."<br/>>";
-            // echo "hasil dec: ".$var_dec."<br/>>";
+            // echo "hasil enc: ".$var_enc."<br/>";
+            // echo "hasil dec: ".$var_dec."<br/>";
 
             $urienc           = $this->uri->segment(3);
-            $uridec  = $this->encryption->decrypt($urienc);
+            // $uridec  = $this->encryption->decrypt($urienc);
+            $uridec  = $this->encrypt->decode($urienc);
               //  echo "Decrypt: ".$uridec;
               //  die();
 
-               $data['data'] = $this->db->get_where('perkara_banding',array ('perkara_id'=>$urienc))->row_array();
+               $data['data'] = $this->db->get_where('perkara_banding',array ('perkara_id'=>$uridec))->row_array();
                $this->load->view('template/header');
                $this->load->view('template/sidebar');
                $this->load->view('kontent/v_data_banding_edit', $data);
