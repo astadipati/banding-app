@@ -1,20 +1,19 @@
-
       <div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
+            <button class="btn btn-success"><i class="material-icons">person</i> Tambah Data</button>
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Data Banding</h4>
-                  <p class="card-category"> Validasi</p>
+                  <h4 class="card-title ">Data Perkara</h4>
+                  <p class="card-category">Tingkat Banding</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
-                      <thead class="">
+                      <thead class="text-success">
                         <th>No</th>
                         <th>No Banding</th>
-                        <!-- <th>Tgl Putus TK1</th> -->
                         <th>Tgl Daftar Banding</th>
                         <th>Pemohon Banding</th>
                         <th colspan="2" >Aksi</th>
@@ -40,8 +39,8 @@
                           <td class="text-primary"><?= $row->pemohon_banding?></td>
                           <td><a href="<?php echo base_URL()?>hal/dbedit/<?php 
                           $datae = $row->perkara_id;
-                          echo $this->encrypt->encode($datae);?>" 
-                          rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Detil">
+                          echo $datae;?>"  
+                          rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Lihat Detil">
                                 <i class="material-icons">edit</i></a></td>
                           <!-- <td><button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit">
                                 <i class="material-icons">edit</i></button></td> -->

@@ -39,10 +39,9 @@
   </div>
   <!--   Core JS Files   -->
   <script src="<?php echo base_url().'assets/js/core/jquery.min.js'?>"></script>
-  <script src="<?php echo base_url().'assets/js/jquery-ui.js'?>"></script>
   <script src="<?php echo base_url().'assets/js/core/popper.min.js'?>"></script>
   <script src="<?php echo base_url().'assets/js/core/bootstrap-material-design.min.js'?>"></script>
-  
+  <script src="<?php echo base_url().'assets/js/jquery-ui.js'?>" type="text/javascript"></script>
   <!-- <script src="../assets/js/core/jquery.min.js"></script> -->
   <!-- <script src="../assets/js/core/popper.min.js"></script> -->
   <!-- <script src="../assets/js/core/bootstrap-material-design.min.js"></script> -->
@@ -105,18 +104,11 @@
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="<?php echo base_url().'assets/demo/demo.js'?>"></script>
   <!-- <script src="../assets/demo/demo.js"></script> -->
+  
   <script>
     $(document).ready(function() {
-
   // ext
-      $("#hakim").autocomplete({
-              source: "<?php echo site_url('hal/dbedit/?');?>"});
-      $("#hakim2").autocomplete({
-              source: "<?php echo site_url('hal/dbedit/?');?>"});
-      $("#hakim3").autocomplete({
-              source: "<?php echo site_url('hal/dbedit/?');?>"});
   // end ext
-
       $().ready(function() {
         $sidebar = $('.sidebar');
 
@@ -397,6 +389,34 @@
 
     });
   </script>
+  <script type="text/javascript">
+        $(document).ready(function(){
+            $( "#hakim" ).autocomplete({
+              source: "<?php echo site_url('hal/dbedit/?');?>"
+            });
+        });
+  </script>
+  <script type="text/javascript">
+        $(document).ready(function(){
+            $( "#hakim2" ).autocomplete({
+              source: "<?php echo site_url('hal/dbedit/?');?>"
+            });
+        });
+  </script>
+  <script type="text/javascript">
+        $(document).ready(function(){
+            $( "#hakim3" ).autocomplete({
+              source: "<?php echo site_url('hal/dbedit/?');?>"
+            });
+        });
+  </script>
+  <script type="text/javascript">
+        $(document).ready(function(){
+            $( "#pp" ).autocomplete({
+              source: "<?php echo site_url('hal/dbedit/?');?>"
+            });
+        });
+  </script>
 </body>
 
 </html>

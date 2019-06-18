@@ -39,13 +39,15 @@
   <meta property="og:description" content="Material Dashboard is a Free Material Bootstrap Admin with a fresh, new design inspired by Google's Material Design." />
   <meta property="og:site_name" content="Creative Tim" />
   <!--     Fonts and icons     -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" /> -->
+  <link href="<?php echo base_url().'assets/css/fontsgoogle.css'?>" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"> -->
+  <link href="<?php echo base_url().'assets/css/font-awesome.min.css'?>" rel="stylesheet">
   <!-- CSS Files -->
   <link href="<?php echo base_url().'assets/css/material-dashboard.min.css?v=2.1.1'?>" rel="stylesheet">
   <!-- <link href="../assets/css/material-dashboard.min.css?v=2.1.1" rel="stylesheet" /> -->
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  
+  <link rel="stylesheet" href="<?php echo base_url().'assets/css/jquery-ui.css'?>">
   <link href="<?php echo base_url().'assets/demo/demo.css'?>" rel="stylesheet">
   <!-- <link href="../assets/demo/demo.css" rel="stylesheet" /> -->
   <!-- Google Tag Manager -->
