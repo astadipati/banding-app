@@ -19,6 +19,30 @@
             </a>
           </li>
           <li class="nav-item ">
+            <a class="nav-link" href="<?php echo base_url()?>hal/hakim">
+              <i class="material-icons">person</i>
+              <p>Hakim Pengadilan Tinggi</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<?php echo base_url()?>hal/hakim_pa">
+              <i class="material-icons">person</i>
+              <p>Hakim Pengadilan Agama</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<?php echo base_url()?>hal/panitera">
+              <i class="material-icons">person</i>
+              <p>PP Pengadilan Tinggi</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<?php echo base_url()?>hal/panitera_pa">
+              <i class="material-icons">person</i>
+              <p>PP Pengadilan Agama</p>
+            </a>
+          </li>
+          <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url()?>hal/perkara_banding">
               <i class="material-icons">content_paste</i>
               <p>Perkara Banding</p>
@@ -30,7 +54,7 @@
               <p>Data Banding</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url()?>hal/hakim">
               <i class="material-icons">library_books</i>
               <p>Hakim</p>
@@ -41,7 +65,7 @@
               <i class="material-icons">bubble_chart</i>
               <p>Panitera</p>
             </a>
-          </li>
+          </li> -->
           <li class="nav-item ">
             <a class="nav-link" href="<?php echo base_url()?>hal/laporan">
               <i class="material-icons">location_ons</i>
@@ -80,6 +104,18 @@
             <a class="nav-link" href="<?php echo base_url()?>hal/user_profile">
               <i class="material-icons">person</i>
               <p>User Profile</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<?php echo base_url()?>hal/hakim_pa">
+              <i class="material-icons">person</i>
+              <p>Hakim Pengadilan Agama</p>
+            </a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="<?php echo base_url()?>hal/panitera_pa">
+              <i class="material-icons">person</i>
+              <p>Panitera/Pengganti</p>
             </a>
           </li>
           <li class="nav-item ">

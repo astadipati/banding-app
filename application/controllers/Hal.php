@@ -3,6 +3,8 @@ class Hal extends CI_Controller{
   function __construct(){
     parent::__construct();
     $this->load->model('M_banding');
+
+    $temp = 345;
     // $this->load->library('encryption');
     $this->load->library('encrypt');
     // $this->encryption->initialize(
@@ -70,22 +72,22 @@ class Hal extends CI_Controller{
       echo "Restricted";
     }
   }
-  function hakim4(){
+  function hakim_pa(){
     if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
 
       $this->load->library('pagination');
-      $config['base_url'] = base_url().'/hal/data_banding/';
-      $config['total_rows'] = $this->M_banding->tampil_banding()->num_rows(); 
-      $data['total'] = $this->M_banding->tampil_banding()->num_rows(); 
+      $config['base_url'] = base_url().'/hal/hakim_pa/';
+      $config['total_rows'] = $this->M_banding->tampil_hakim_pa()->num_rows(); 
+      $data['total'] = $this->M_banding->tampil_hakim_pa()->num_rows(); 
       $config['per_page'] = 10;
       $this->pagination->initialize($config);
       $data['paging']     = $this->pagination->create_links();
       $halaman            = $this->uri->segment(3);
       $halaman            = $halaman ==''?0:$halaman;
-      $data ['data']  = $this->M_banding->tampil_banding_paging($halaman,  $config['per_page']);
+      $data ['data']  = $this->M_banding->tampil_hakim_pa_paging($halaman,  $config['per_page']);
       $this->load->view('template/header');
 		  $this->load->view('template/sidebar');
-      $this->load->view('kontent/v_hakim');
+      $this->load->view('kontent/v_hakim_pa', $data);
       $this->load->view('template/footer');
     }else{
       echo "Restricted";
@@ -106,6 +108,26 @@ class Hal extends CI_Controller{
       $this->load->view('template/header');
 		  $this->load->view('template/sidebar');
       $this->load->view('kontent/v_panitera', $data);
+      $this->load->view('template/footer');
+    }else{
+      echo "Restricted";
+    }
+  }
+  function panitera_pa(){
+    if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+      $this->load->library('pagination');
+      $config['base_url'] = base_url().'/hal/panitera_pa/';
+      $config['total_rows'] = $this->M_banding->tampil_pp_pa()->num_rows(); 
+      $data['total'] = $this->M_banding->tampil_pp_pa()->num_rows(); 
+      $config['per_page'] = 10;
+      $this->pagination->initialize($config);
+      $data['paging']     = $this->pagination->create_links();
+      $halaman            = $this->uri->segment(3);
+      $halaman            = $halaman ==''?0:$halaman;
+      $data ['data']  = $this->M_banding->tampil_pp_pa_paging($halaman,  $config['per_page']);
+      $this->load->view('template/header');
+		  $this->load->view('template/sidebar');
+      $this->load->view('kontent/v_panitera_pa', $data);
       $this->load->view('template/footer');
     }else{
       echo "Restricted";
@@ -202,10 +224,29 @@ class Hal extends CI_Controller{
               }
               
             }else{
+            
+            $uri          = $this->uri->segment(3);
+            $enc = $this->encrypt->encode($uri);
+            // echo $enc; echo "<br><hr>";
+            $len = strlen($uri);
+            $dataenc = str_replace(array('+','/','='),array('-','_',''),$len);
+            $key = 123665765775765867576578658575875767;
+            $res1 = base64_encode($dataenc);
+            // echo $res1; echo "<br><hr>";
 
-            $urienc           = $this->uri->segment(3);
-            $uridec  = $this->encrypt->decode($urienc);
-            $data['data'] = $this->db->get_where('perkara_banding',array ('perkara_id'=>$urienc))->row_array();
+
+            // die();
+            
+            $dec = $this->encrypt->decode($uri);
+            // echo $dec; echo "<br>";
+            $res = base64_decode($uri);
+            // echo $uri; echo "<br>";
+            // echo $dec; echo "<br>";
+            // $result = base64_decode($res);
+            // echo $result;
+            // die();
+            // $uridec  = $this->encrypt->decode($urienc);
+            $data['data'] = $this->db->get_where('perkara_banding',array ('perkara_id'=>$res))->row_array();
             $this->load->view('template/header');
             $this->load->view('template/sidebar');
             $this->load->view('kontent/v_data_banding_edit', $data);

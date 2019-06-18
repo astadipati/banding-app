@@ -39,12 +39,7 @@
                           <td class="text-primary"><?= $row->pemohon_banding?></td>
                           <td><a href="<?php echo base_URL()?>hal/dbedit/<?php 
                           $datae = $row->perkara_id;
-                          $key = 123665765775765867576578658575875767;
-                          $enc = $this->encrypt->encode($datae);
-                          $dataenc = str_replace(array('+','/','='),array('-','_',''),$enc);
-
-                          $res = base64_encode($datae);
-                          echo $res;?>"  
+                          echo $datae;?>"  
                           rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Lihat Detil">
                                 <i class="material-icons">edit</i></a></td>
                           <!-- <td><button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit">

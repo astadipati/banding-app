@@ -1,21 +1,22 @@
-      <div class="content">
+<div class="content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
             <button class="btn btn-success"><i class="material-icons">person</i> Tambah Data</button>
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Data Perkara</h4>
+                  <h4 class="card-title ">Data Hakim</h4>
                   <p class="card-category">Tingkat Banding</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-hover">
-                      <thead class="text-success">
+                      <thead class="text-info">
                         <th>No</th>
-                        <th>No Banding</th>
-                        <th>Tgl Daftar Banding</th>
-                        <th>Pemohon Banding</th>
+                        <th>NIP</th>
+                        <th>Nama</th>
+                        <th>Kode</th>
+                        <th>Status</th>
                         <th colspan="2" >Aksi</th>
                       </thead>
                       <tbody>
@@ -33,18 +34,16 @@
                         ?>
                         <tr>
                           <td><?php echo $i++?></td>
-                          <td><?= $row->nomor_perkara_pn?></td>
-                          <!-- <td><?= $row->putusan_pn?></td> -->
-                          <td><?= $row->permohonan_banding?></td>
-                          <td class="text-primary"><?= $row->pemohon_banding?></td>
-                          <td><a href="<?php echo base_URL()?>hal/dbedit/<?php 
-                          $datae = $row->perkara_id;
-                          $key = 123665765775765867576578658575875767;
-                          $enc = $this->encrypt->encode($datae);
-                          $dataenc = str_replace(array('+','/','='),array('-','_',''),$enc);
-
-                          $res = base64_encode($datae);
-                          echo $res;?>"  
+                          <td><?= $row->nip?></td>
+                          <td class="text-primary"><?= $row->nama_gelar?></td>
+                          <td><?= $row->kode;?></td>
+                          <td ><?php
+                                if ($row->aktif=="Y") {echo "Aktif";
+                                }else{echo "Tidak";}
+                          ?></td>
+                          <td><a href="<?php echo base_URL()?>hal/hkedit/<?php 
+                          $datae = $row->id;
+                          echo $datae;?>"  
                           rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Lihat Detil">
                                 <i class="material-icons">edit</i></a></td>
                           <!-- <td><button type="button" rel="tooltip" title="" class="btn btn-primary btn-link btn-sm" data-original-title="Edit">
